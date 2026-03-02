@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(-45deg, #360234, #14011e, #340237, #4a023a);
+    background-size: 400% 400%;
+    animation: gradient 12s ease infinite;
+    color: white;
+    transition: 0.4s;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body.light {
+    background: linear-gradient(-45deg, #74074c, #b00859, #930549, #c734a0);
+    color: black;
+}
+
+.gallery-section {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.title {
+    font-size: 4rem;
+    margin-bottom: 30px;
+}
+
+.filters {
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    margin: 5px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    transition: 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: white;
+    color: black;
+}
+
+.gallery {
+    column-count: 3;
+    column-gap: 20px;
+}
+
+.gallery-item {
+    margin-bottom: 20px;
+    break-inside: avoid;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gallery-item img {
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+@media(max-width: 900px){
+    .gallery { column-count: 2; }
+}
+@media(max-width: 600px){
+    .gallery { column-count: 1; }
+}
+
+/* LIGHTBOX */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 20px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    font-size: 40px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev { left: 40px; }
+.next { right: 40px; }
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated Gallery</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<button class="theme-toggle" id="themeToggle">🌙</button>
+
+<section class="gallery-section">
+    <h1 class="title">Image Gallery</h1>
+
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="nature">Nature</button>
+        <button class="filter-btn" data-filter="tech">Tech</button>
+        <button class="filter-btn" data-filter="city">City</button> 
+    </div>
+
+    <div class="gallery" id="gallery"></div>
+</section>
+
+<!-- FIXED LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img id="lightbox-img">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
